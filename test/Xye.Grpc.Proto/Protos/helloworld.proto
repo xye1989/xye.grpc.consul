@@ -1,0 +1,45 @@
+﻿syntax = "proto3";
+
+option csharp_namespace="CFGrantBoxGrpc";
+
+service TestService
+{
+   rpc UnaryTest(TestRequest) returns (TestResponse);
+
+   rpc ClientStreamingTest(stream TestRequest) returns (TestResponse);
+
+   rpc ServerStreamingTest(TestRequest) returns (stream TestResponse);
+
+   rpc DuplexStreamingTest(stream TestRequest) returns (stream TestResponse);
+}
+
+service UserService
+{
+   rpc UnaryTest(TestRequest) returns (TestResponse);
+
+   rpc ClientStreamingTest(stream TestRequest) returns (TestResponse);
+
+   rpc ServerStreamingTest(TestRequest) returns (stream TestResponse);
+
+   rpc DuplexStreamingTest(stream TestRequest) returns (stream TestResponse);
+}
+
+
+message TestRequest
+{
+  int32 intField = 1;
+  int64 longField = 2;
+  bool boolField = 3;
+  repeated string stringField = 4;
+  ChildRequest classFiled =5;
+}
+
+message ChildRequest
+{
+  bytes bytesField = 1;
+}
+
+message TestResponse
+{
+  string message = 1;
+}

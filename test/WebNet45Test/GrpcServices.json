@@ -1,0 +1,22 @@
+{
+  "GrpcServices": [
+    {
+      "Name": "GrantClient2",
+      "Port": 25404,
+      "Host": "192.168.103.177",
+      "IsDiscovery": false
+    },
+    {
+      "Name": "TestService1",
+      "Port": 31996,
+      "Host": "192.168.44.191",
+      "IsDiscovery": false
+    },
+    {
+      "Name": "TestService1",
+      "Port": 1121,
+      "Host": "10.0.75.1",
+      "IsDiscovery": false
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+﻿syntax = "proto3";
+
+option csharp_namespace="CFDiamondSysGrpc";
+
+service DiamondService
+{
+   rpc Operate(OperateRequest) returns (OperateResponse);
+}
+
+message OperateRequest
+{
+	int32 PlatformID = 1;
+	int64 SignTimestamp = 2;
+	string Credential = 3;
+	int64 UserID = 4;
+	int64 Qty = 5;
+	string GameCode = 6;
+	int32 GameID = 7;
+	string Description = 8;
+	int32 OperationID = 9;
+	string LinkID = 10;
+	bool IsProxy = 11;
+}
+
+message OperateResponse
+{
+	int32 Code = 1;
+	string Message = 2;
+	OperateResponseData Data = 3;
+}
+
+message OperateResponseData
+{
+	int64 UserID = 1;
+	int64 Balance = 2;
+}

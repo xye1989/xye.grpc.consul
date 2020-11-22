@@ -1,0 +1,7 @@
+{
+  "ConsulServerConfig": {
+    "Host": "192.168.44.191",
+    "Port": "31949",
+    "DaemonSleep": 1
+  }
+}

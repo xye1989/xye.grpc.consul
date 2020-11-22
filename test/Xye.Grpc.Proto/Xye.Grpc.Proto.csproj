@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup> 
+    <PackageReference Include="Google.Protobuf" Version="3.7.0" /> 
+    <PackageReference Include="Grpc" Version="1.20.1" />
+    <PackageReference Include="Grpc.Tools" Version="1.20.1" PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Floder Include="Protos\" />
+    <Protobuf Include="Protos\grant.proto" />
+    <Protobuf Include="Protos\diamond.proto" />
+    <Protobuf Include="Protos\greet.proto" />
+  </ItemGroup>
+ 
+</Project>

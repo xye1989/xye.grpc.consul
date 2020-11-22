@@ -1,0 +1,67 @@
+﻿syntax = "proto3";
+
+option csharp_namespace="CFGrantBoxGrpc";
+
+service GrantService
+{
+   rpc Grant(GrantRequest) returns (GrantResponse);
+}
+
+service TestService
+{
+   rpc GetIP(GetIPRequest) returns (GetIPResponse);
+}
+
+message GrantRequest
+{
+	int32 UserId = 1;
+	string BizOrderNo = 2;
+	string AppCode = 3;
+	int32 AppId = 4;
+	string UserIP = 5;
+	string RequestIP = 6;
+	int64 Timestamp = 7;
+	string Sign = 8;
+	repeated GrantItemRequest GrantItems = 9;
+}
+
+message GrantItemRequest
+{
+	int32 ItemId = 1;
+	int32 Number = 2;
+	string ExtendParams = 3;
+}
+
+message GetIPRequest
+{
+
+}
+
+message BaseResponse
+{
+	int32 Code = 1;
+	string Message = 2;
+}
+
+message GrantResponse
+{
+	int32 Code = 1;
+	string Message = 2;
+	string OrderNo = 3;
+	string BizOrderNo = 4;
+	repeated GrantItemResponse Data = 5;
+}
+
+message GrantItemResponse
+{
+	int32 ItemId = 1;
+	int32 Status = 2;
+	string ResultData = 3;
+}
+
+message GetIPResponse
+{
+	int32 Code = 1;
+	string Message = 2;
+	string Data = 3;
+}
